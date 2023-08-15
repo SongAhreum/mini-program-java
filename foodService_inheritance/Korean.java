@@ -1,7 +1,7 @@
 package foodService_inheritance;
 
 public class Korean extends Restaurant{
-	private final String foodType = "한식";	
+	private final String storeType = "한식";	
 	private String name;
 	private String[] menu = new String[1];
 	private int[] price= new int[1];
@@ -44,17 +44,13 @@ public class Korean extends Restaurant{
 		this.price = korean.getPrice();
 	}
 	
-	@Override
+	
 	public void info() {
 		System.out.println(this.name+"에 오신걸 환영합니다. **평점 :"+this.getGrade()+"**");
 		System.out.print("영업일 운영시간 : "+this.startTime+"~"+this.endTime+" /");
 		
-		System.out.print("공휴일 : ");
-		for(int i =0;i<closeDay.length;i++) {
-			System.out.print(closeDay[i]+" ");			
-		}
-		System.out.println();
-		ableDelivery();		
+		System.out.println("휴무일 : "+closeDay());		
+		System.out.println(ableDelivery());		
 		ableReservation();	
 		
 		System.out.println("=====메뉴======");
@@ -87,7 +83,7 @@ public class Korean extends Restaurant{
 	}
 
 	public String getStoreType() {
-		return StoreType;
+		return storeType;
 	}
 	
 }

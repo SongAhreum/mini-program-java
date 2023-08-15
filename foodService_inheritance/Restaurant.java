@@ -61,17 +61,13 @@ public class Restaurant extends FoodService{
 	}
 
 	//메서드
-	@Override
 	
 	public void info() {
 		System.out.println("**평점 :"+this.getGrade()+"**");
 		System.out.print("영업일 운영시간 : "+this.startTime+"~"+this.endTime+" /");
-		System.out.print("휴일 : ");
-		for(int i =0;i<closeDay.length;i++) {
-			System.out.print(closeDay[i]+" ");			
-		}
-		System.out.println();
-		ableDelivery();		
+		System.out.print("휴무일 : ");
+		System.out.println(closeDay());		
+		System.out.println(ableDelivery());		
 		ableReservation();			
 	}
 	
